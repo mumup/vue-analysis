@@ -140,7 +140,7 @@ constructor (
 }  
 ```
 
-可以发现 `computed watcher` 会并不会立刻求值，同时持有一个 `dep` 实例。
+可以发现 `computed watcher` 并不会立刻求值，同时持有一个 `dep` 实例。
 
 然后当我们的 `render` 函数执行访问到 `this.fullName` 的时候，就触发了计算属性的 `getter`，它会拿到计算属性对应的 `watcher`，然后执行 `watcher.depend()`，来看一下它的定义：
 
